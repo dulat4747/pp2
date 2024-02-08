@@ -1,4 +1,1 @@
-
-
-print("Dulat kotakbas")
-print("Zaebal python")
+print("hello")
