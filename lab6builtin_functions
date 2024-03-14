@@ -1,0 +1,59 @@
+#example1
+import math
+
+def multiply_list(numbers):
+
+    result = math.prod(numbers)
+    return result
+
+numbers_list = [2, 3, 5, 7, 11]
+result = multiply_list(numbers_list)
+
+print(result)
+
+#example2
+def count_letters(s):
+    cnt_u, cnt_l = 0, 0
+    for i in s:
+        if i.isupper():
+            cnt_u += 1
+        elif i.islower():
+            cnt_l += 1
+    return(cnt_u, cnt_l)
+s = str(input())
+cnt_u, cnt_l = count_letters(s)
+print("Uppercase letters: ", cnt_u)
+print("Lowercase_letters: ", cnt_l)
+
+#example3
+def palindrom(s):
+    s = s.casefold() #casefold()мы делаем строку пригодным для бесрегистровых сравнений
+
+    s_rev = reversed(s)
+
+    if list(s) == list(s_rev):
+        return "String is palindrom"
+    else:
+        return "Sring is not palindrom"
+
+s = input()
+print(palindrom(s))
+
+#example4 
+import time
+import math
+
+a = int(input())
+b = int(input()) #Ожидайте заданное количество миллисекунд
+
+time.sleep(b / 1000) #Ожидание заданного количество миллисекунд
+
+result = math.sqrt(a)
+print(result)
+
+#example5
+def all_true(tp):
+    return all(tp)  #Функция all()принимает итерируемый объект и возвращает значение, Trueесли все элементы в итерируемом объекте равны True, и Falseв противном случае.
+
+tp = (bool(i) for i in input().split())
+print(all_true(tp))

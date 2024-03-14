@@ -1,0 +1,109 @@
+#example1
+import os
+
+path = "/Users/Hp/Documents/pp2_dias/PP2/lab4"
+
+# List only directories
+print("Directories:")
+for directory in os.listdir(path):
+    if os.path.isdir(os.path.join(path, directory)):
+        print(directory)
+
+# List only files
+print("Files:")
+for file in os.listdir(path):
+    if os.path.isfile(os.path.join(path, file)):
+        print(file)
+
+# List all directories and files
+print("All directories and files:")
+for item in os.listdir(path):
+    print(item)
+
+#example2
+import os
+
+path = "/Users/Hp/Documents/pp2_dias/PP2/lab4"
+
+# Check existence
+if not os.path.exists(path):
+    print("Path does not exist.")
+else:
+    print("Path exists.")
+
+# Check readability
+if not os.access(path, os.R_OK):
+    print("Path is not readable.")
+else:
+    print("Path is readable.")
+
+# Check writability
+if not os.access(path, os.W_OK):
+    print("Path is not writable.")
+else:
+    print("Path is writable.")
+
+# Check executability
+if not os.access(path, os.X_OK):
+    print("Path is not executable.")
+else:
+    print("Path is executable.")
+
+#example3
+import os
+
+path = "/Users/Hp/Documents/pp2_dias/PP2/lab4"
+
+# Check existence
+if not os.path.exists(path):
+    print("Path does not exist.")
+else:
+    print("Path exists.")
+
+# Find filename and directory portion of the path
+filename = os.path.basename(path)
+directory = os.path.dirname(path)
+
+print("Filename:", filename)
+print("Directory:", directory)
+
+#example4
+filename = "snake.txt"
+with open(filename, "r") as file:
+    cnt = 0
+    for line in file:
+        cnt += 1
+print(cnt)
+
+#example5
+lst = [i for i in input().split()]
+filename = 'snake.txt'
+# Открытие файла для записи в режиме "w" (write)
+with open(filename , 'w') as f:
+    # Запись списка в файл
+    for item in lst:
+        f.write("%s\n" % item)
+
+#example6
+import string
+
+for letter in string.ascii_uppercase:
+    filename = letter + ".txt"
+    with open(filename, "w") as file:
+        file.write("This is file %s" % filename)
+
+#example7
+with open('example.txt', 'r') as old_file:
+    with open('e_new.txt', 'w') as new_file:
+        new_file.write(old_file.read())
+#example8
+import os
+
+path = "/Users/Hp/Documents/pp2_dias/PP2/lab6/file_handling/Z.txt"
+
+# Check existence and access
+if os.path.exists(path) and os.access(path, os.W_OK):
+    os.remove(path)
+    print("File deleted.")
+else:
+    print("File not found or not writable.")
