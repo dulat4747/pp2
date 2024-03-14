@@ -1,0 +1,38 @@
+#example1
+import datetime
+
+cur_date = datetime.date.today()
+
+new_date = cur_date - datetime.timedelta(days=5)
+
+print("Current date:", cur_date)
+print("Five days ago:", new_date)
+
+#example2
+import datetime
+
+today = datetime.date.today()
+yest = today - datetime.timedelta(days=1)
+tmw = today + datetime.timedelta(days=1)
+
+print("Yesterday:", yest)
+print("Today:", today)
+print("Tomorrow:", tmw)
+
+#exapmle3
+import datetime
+
+cur_datetime = datetime.datetime.now()
+new_datetime = cur_datetime.replace(microsecond=0)
+
+print("Current datetime:", cur_datetime)
+print("New datetime:", new_datetime)
+#example4
+import datetime
+
+date1 = datetime.datetime(2023, 2, 20, 17, 50, 0)
+date2 = datetime.datetime(2023, 2, 20, 17, 58, 0)
+
+diff_in_seconds = (date2 - date1).total_seconds()
+
+print("Difference in seconds:", diff_in_seconds)

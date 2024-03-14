@@ -1,0 +1,48 @@
+#exapmle1
+def square_generator(N):
+    for i in range(N+1):
+        yield i**2
+
+x = int(input())
+for square in square_generator(x):
+    print(square)
+
+#example2
+def even_numbers(n):
+    for i in range(n+1):
+        if i % 2 == 0:
+            yield i
+
+n = int(input())
+even_nums = even_numbers(n)
+print(*even_nums, sep=',')
+
+#example3
+def div_by_3_and_4(n):
+    for i in range(n+1):
+        if i % 3 == 0 and i % 4 == 0:
+            yield i
+
+n=int(input())
+for num in div_by_3_and_4(n):
+    print(num, end=' ')
+
+#example4
+def squares(a, b):
+    for i in range(a, b+1):
+        yield i ** 2
+
+x = int(input())
+y = int(input())
+for square in squares(x, y):
+    print(square)
+
+#example5
+def count_down(n):
+    while n >= 0:
+        yield n
+        n -= 1
+
+x = int(input())
+for num in count_down(x):
+    print(num)
